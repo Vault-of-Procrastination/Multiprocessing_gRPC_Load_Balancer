@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message send_msg {
+	string send = 1;
+}
+
+message response_msg {
+	bool success = 1;
+	string msg = 2;
+}
+
+service Test_Streamer {
+  rpc One_to_One(send_msg) returns (response_msg);
+  rpc Many_to_One(stream send_msg) returns (response_msg);
+  rpc One_to_Many(send_msg) returns (stream response_msg);
+  rpc Many_to_Many(stream send_msg) returns (stream response_msg);
+}
