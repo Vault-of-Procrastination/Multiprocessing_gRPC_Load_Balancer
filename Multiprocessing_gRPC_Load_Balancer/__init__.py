@@ -13,6 +13,6 @@ from .client import search_servers
 __all__ = ['Multiprocessing_gRPC_Load_Balancer_Server',
            'search_servers']
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
